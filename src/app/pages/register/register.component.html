@@ -1,70 +1,96 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
-    <div class="col-md-4">
-      <h2 class="text-center">Registro</h2>
-      <form [formGroup]="registerForm">
-        <div class="mb-3">
-          <label for="name" class="form-label">Nombre</label>
-          <input type="text" id="name" class="form-control" formControlName="name">
-          <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="text-danger">
-            El nombre debe tener al menos 3 caracteres
-          </div>
-        </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="text-center mb-4">Registro</h2>
+          <form [formGroup]="registerForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" id="name" class="form-control" formControlName="name"
+                placeholder="Ingresa tu nombre" />
+              <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+                class="text-danger small mt-1">
+                El nombre debe tener al menos 3 caracteres
+              </div>
+            </div>
 
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" id="email" class="form-control" formControlName="email">
-          <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
-            Email inválido
-          </div>
-        </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" formControlName="email"
+                placeholder="Ingresa tu email" />
+              <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+                class="text-danger small mt-1">
+                Email inválido
+              </div>
+            </div>
 
-        <div class="mb-3 position-relative">
-          <label for="password" class="form-label">Contraseña</label>
-          <div class="input-group">
-            <input [type]="typePassword" id="password" class="form-control" formControlName="password">
-            <button type="button" class="btn btn-outline-secondary" (click)="seePassword()">
-              <svg *ngIf="typePassword === 'text'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zm-8 4.5c-3.5 0-6-3.5-6-4.5s2.5-4.5 6-4.5 6 3.5 6 4.5-2.5 4.5-6 4.5z"/>
-                <path d="M8 5.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/>
-              </svg>
-              <svg *ngIf="typePassword === 'password'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
-                <path d="M13.359 12.197A7.847 7.847 0 0 0 16 8s-3-5.5-8-5.5c-.869 0-1.696.15-2.465.407m-2.862 1.72C2.83 5.74 1.85 7.63 1.85 8s2.5 4.5 6 4.5c.956 0 1.85-.192 2.676-.537"/>
-                <path d="M2.646 1.354a.5.5 0 0 1 .708 0l12 12a.5.5 0 1 1-.708.708l-12-12a.5.5 0 0 1 0-.708z"/>
-              </svg>
+            <div class="mb-3 position-relative">
+              <label for="password" class="form-label">Contraseña</label>
+              <div class="input-group">
+                <input [type]="typePassword" id="password" class="form-control" formControlName="password"
+                  placeholder="Ingresa tu contraseña" />
+                <button type="button" class="btn btn-outline-secondary" (click)="seePassword()">
+                  <svg *ngIf="typePassword === 'text'" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                    <path
+                      d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zm-8 4.5c-3.5 0-6-3.5-6-4.5s2.5-4.5 6-4.5 6 3.5 6 4.5-2.5 4.5-6 4.5z" />
+                    <path d="M8 5.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z" />
+                  </svg>
+                  <svg *ngIf="typePassword === 'password'" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
+                    <path
+                      d="M13.359 12.197A7.847 7.847 0 0 0 16 8s-3-5.5-8-5.5c-.869 0-1.696.15-2.465.407m-2.862 1.72C2.83 5.74 1.85 7.63 1.85 8s2.5 4.5 6 4.5c.956 0 1.85-.192 2.676-.537" />
+                    <path d="M2.646 1.354a.5.5 0 0 1 .708 0l12 12a.5.5 0 1 1-.708.708l-12-12a.5.5 0 0 1 0-.708z" />
+                  </svg>
+                </button>
+              </div>
+              <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                class="text-danger small mt-1">
+                La contraseña debe tener al menos 6 caracteres
+              </div>
+            </div>
+
+            <div class="mb-3 position-relative">
+              <label for="confirmPassword" class="form-label">Confirma la contraseña</label>
+              <div class="input-group">
+                <input [type]="typePassword2" id="confirmPassword" class="form-control"
+                  formControlName="confirmPassword" placeholder="Confirma tu contraseña" />
+                <button type="button" class="btn btn-outline-secondary" (click)="seePassword2()">
+                  <svg *ngIf="typePassword2 === 'text'" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                    <path
+                      d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zm-8 4.5c-3.5 0-6-3.5-6-4.5s2.5-4.5 6-4.5 6 3.5 6 4.5-2.5 4.5-6 4.5z" />
+                    <path d="M8 5.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z" />
+                  </svg>
+                  <svg *ngIf="typePassword2 === 'password'" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
+                    <path
+                      d="M13.359 12.197A7.847 7.847 0 0 0 16 8s-3-5.5-8-5.5c-.869 0-1.696.15-2.465.407m-2.862 1.72C2.83 5.74 1.85 7.63 1.85 8s2.5 4.5 6 4.5c.956 0 1.85-.192 2.676-.537" />
+                    <path d="M2.646 1.354a.5.5 0 0 1 .708 0l12 12a.5.5 0 1 1-.708.708l-12-12a.5.5 0 0 1 0-.708z" />
+                  </svg>
+                </button>
+              </div>
+              <div *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched"
+                class="text-danger small mt-1">
+                La contraseña debe coincidir
+              </div>
+            </div>
+
+            <button (click)="register()" type="submit" class="btn btn-primary w-100 mb-3"
+              [disabled]="registerForm.invalid">
+              Registrarse
             </button>
-          </div>
-          <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-danger">
-            La contraseña debe tener al menos 6 caracteres
-          </div>
+          </form>
+
+          <h5 class="text-center mt-3">
+            ¿Ya tienes una cuenta?
+            <span class="text-primary" style="cursor: pointer" (click)="login()">
+              Login
+            </span>
+          </h5>
         </div>
-
-        <div class="mb-3 position-relative">
-          <label for="confirmPassword" class="form-label">Confirma la contraseña</label>
-          <div class="input-group">
-            <input [type]="typePassword2" id="confirmPassword" class="form-control" formControlName="confirmPassword">
-            <button type="button" class="btn btn-outline-secondary" (click)="seePassword2()">
-              <svg *ngIf="typePassword2 === 'text'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zm-8 4.5c-3.5 0-6-3.5-6-4.5s2.5-4.5 6-4.5 6 3.5 6 4.5-2.5 4.5-6 4.5z"/>
-                <path d="M8 5.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/>
-              </svg>
-              <svg *ngIf="typePassword2 === 'password'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
-                <path d="M13.359 12.197A7.847 7.847 0 0 0 16 8s-3-5.5-8-5.5c-.869 0-1.696.15-2.465.407m-2.862 1.72C2.83 5.74 1.85 7.63 1.85 8s2.5 4.5 6 4.5c.956 0 1.85-.192 2.676-.537"/>
-                <path d="M2.646 1.354a.5.5 0 0 1 .708 0l12 12a.5.5 0 1 1-.708.708l-12-12a.5.5 0 0 1 0-.708z"/>
-              </svg>
-            </button>
-          </div>
-          <div *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched" class="text-danger">
-            La contraseña debe tener al menos 6 caracteres
-          </div>
-        </div>
-
-        <button (click)="register()" type="submit" class="btn btn-success w-100" [disabled]="registerForm.invalid">
-          Registrarse
-        </button>
-      </form>
-
-      <h5 class="text-center mt-3">¿Ya tienes una cuenta? <span class="text-primary" style="cursor: pointer;" (click)="login()">Login</span></h5>
+      </div>
     </div>
   </div>
 </div>

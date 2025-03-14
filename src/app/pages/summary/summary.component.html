@@ -1,10 +1,13 @@
-<div class="container">
-  <h2>Resumen del Viaje</h2>
-  <p><strong>Destino: </strong> {{ selectedCountry?.name }}, {{ selectedCity?.name }}</p>
-  <p><strong>Presupuesto en COP: </strong> {{ budget }}</p>
-  <p><strong>Clima actual: </strong> {{ weather }} °C</p>
-  <p><strong>Tasa de cambio:</strong> 1 COP = {{ exchangeRate }} {{ currencySymbol }}</p>
-  <p><strong>Presupuesto convertido:</strong> {{ currencySymbol }} {{ convertedAmount.toFixed(2) }}</p>
+<div class="container d-flex justify-content-center align-items-center mt-4">
+  <div class="w-100 bg-light shadow-sm rounded p-4" style="max-width: 450px;">
+    <h2 class="text-center mb-4">Resumen del Viaje</h2>
 
-  <button class="btn btn-primary mt-3" routerLink="/">Volver al inicio</button>
+    <p class="mb-2"><strong>Destino: </strong> {{ selectedCountry?.name }}, {{ selectedCity?.name }}</p>
+    <p class="mb-2"><strong>Presupuesto en COP: </strong> {{ budget}}</p>
+    <p class="mb-2"><strong>Clima actual: </strong> {{ weather }} °C</p>
+    <p class="mb-2"><strong>Tasa de cambio: </strong> 1 COP = {{ exchangeRate }} {{ currencySymbol }}</p>
+    <p class="mb-2"><strong>Presupuesto convertido: </strong> {{ currencySymbol }} {{ convertedAmount.toFixed(2) }}</p>
+
+    <button class="btn btn-primary w-100 mt-3" routerLink="/">Volver al inicio</button>
+  </div>
 </div>
