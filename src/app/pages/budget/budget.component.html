@@ -1,10 +1,10 @@
 <div class="container d-flex justify-content-center align-items-center mt-4">
   <div class="w-100" style="max-width: 400px;">
-    <h2 class="text-center mb-3">Ingresa tu presupuesto</h2>
+    <h2 class="text-center mb-3">{{ 'BUDGET.ENTER_BUDGET' | translate }}</h2>
 
     <div class="bg-light shadow-sm rounded p-4">
       <div class="form-group mb-3">
-        <label for="budget" class="fw-bold">Presupuesto en COP:</label>
+        <label for="budget" class="fw-bold">{{ 'BUDGET.BUDGET_COP' | translate }}:</label>
         <input class="form-control form-control-lg fw-bold"
                id="budget" [(ngModel)]="budget" min="1" placeholder="Ej: 500000">
       </div>
@@ -12,7 +12,7 @@
       <button class="btn btn-primary w-100"
               [disabled]="!budget || budget < 1"
               (click)="goToNextPage()">
-        Siguiente →
+              {{ 'NEXT' | translate }}
       </button>
     </div>
   </div>

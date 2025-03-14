@@ -1,13 +1,13 @@
 <div class="container d-flex justify-content-center align-items-center mt-4">
   <div class="w-100 bg-light shadow-sm rounded p-4" style="max-width: 450px;">
-    <h2 class="text-center mb-4">Resumen del Viaje</h2>
+    <h2 class="text-center mb-4">{{ 'SUMMARY.TRIP_SUMMARY' | translate }}</h2>
 
-    <p class="mb-2"><strong>Destino: </strong> {{ selectedCountry?.name }}, {{ selectedCity?.name }}</p>
-    <p class="mb-2"><strong>Presupuesto en COP: </strong> {{ budget}}</p>
-    <p class="mb-2"><strong>Clima actual: </strong> {{ weather }} °C</p>
-    <p class="mb-2"><strong>Tasa de cambio: </strong> 1 COP = {{ exchangeRate }} {{ currencySymbol }}</p>
-    <p class="mb-2"><strong>Presupuesto convertido: </strong> {{ currencySymbol }} {{ convertedAmount.toFixed(2) }}</p>
+    <p class="mb-2"><strong>{{ 'SUMMARY.DESTINATION' | translate }}: </strong> {{ selectedCountry?.name }}, {{ selectedCity?.name }}</p>
+    <p class="mb-2"><strong>{{ 'SUMMARY.BUDGET' | translate }}: </strong> {{ budget}}</p>
+    <p class="mb-2"><strong>{{ 'SUMMARY.WEATHER' | translate }}: </strong> {{ weather }} °C</p>
+    <p class="mb-2"><strong>{{ 'SUMMARY.EXCHANGE_RATE' | translate }}: </strong> 1 COP = {{ exchangeRate }} {{ currencySymbol }}</p>
+    <p class="mb-2"><strong>{{ 'SUMMARY.CONVERTED_BUDGET' | translate }}: </strong> {{ currencySymbol }} {{ convertedAmount.toFixed(2) }}</p>
 
-    <button class="btn btn-primary w-100 mt-3" routerLink="/">Volver al inicio</button>
+    <button class="btn btn-primary w-100 mt-3" routerLink="/">{{ 'RETURN_TO_HOME' | translate }}</button>
   </div>
 </div>

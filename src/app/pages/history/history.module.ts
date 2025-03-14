@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HistoryRoutingModule } from './history-routing.module';
 import { HistoryComponent } from './history.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HistoryRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule
   ]
 })
 export class HistoryModule { }

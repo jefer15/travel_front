@@ -1,18 +1,18 @@
 <div class="container mt-4">
-  <h2 class="text-center mb-3">Historial de Consultas</h2>
+  <h2 class="text-center mb-3">{{ 'HISTORY.TITLE' | translate }}</h2>
 
   <div class="table-responsive-sm">
     <table class="table table-borderless table-hover rounded shadow-sm text-sm">
       <thead class="table-primary text-center">
         <tr>
-          <th>País</th>
-          <th>Ciudad</th>
-          <th>Clima</th>
-          <th>Presupuesto (COP)</th>
-          <th>Tipo de moneda de cambio</th>
-          <th>Presupuesto Convertido</th>
-          <th>Nombre del usuario</th>
-          <th>Fecha</th>
+          <th>{{ 'DESTINATION.COUNTRY' | translate }}</th>
+          <th>{{ 'DESTINATION.CITY' | translate }}</th>
+          <th>{{ 'SUMMARY.WEATHER' | translate }}</th>
+          <th>{{ 'BUDGET.BUDGET_COP' | translate }}</th>
+          <th>{{ 'HISTORY.CURRENCY_TYPE' | translate }}</th>
+          <th>{{ 'SUMMARY.CONVERTED_BUDGET' | translate }}</th>
+          <th>{{ 'HISTORY.USERNAME' | translate }}</th>
+          <th>{{ 'HISTORY.DATE' | translate }}</th>
         </tr>
       </thead>
       <tbody>
@@ -31,6 +31,6 @@
   </div>
 
   <div class="text-center mt-3">
-    <button class="btn btn-primary btn-sm px-4" routerLink="/">Volver al inicio</button>
+    <button class="btn btn-primary btn-sm px-4" routerLink="/">{{ 'RETURN_TO_HOME' | translate }}</button>
   </div>
 </div>

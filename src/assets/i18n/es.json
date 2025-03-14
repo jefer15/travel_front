@@ -1,0 +1,33 @@
+{
+  "TITLE": "Viajes",
+  "NEXT": "Siguiente",
+  "RETURN_TO_HOME": "Volver al Inicio",
+  "MENU": {
+    "HOME": "Inicio",
+    "HISTORY": "Historial",
+    "LOGOUT": "Cerrar sesión"
+  },
+  "DESTINATION": {
+    "SELECT_DESTINATION": "Selecciona un destino",
+    "COUNTRY": "País",
+    "CITY": "Ciudad"
+  },
+  "BUDGET": {
+    "ENTER_BUDGET": "Ingresa tu presupuesto",
+    "BUDGET_COP": "Presupuesto en COP"
+  },
+  "SUMMARY": {
+    "TRIP_SUMMARY": "Resumen del viaje",
+    "DESTINATION": "Destino",
+    "BUDGET": "Presupuesto en cop",
+    "WEATHER": "Clima actual",
+    "EXCHANGE_RATE": "Tasa de cambio",
+    "CONVERTED_BUDGET": "Presupuesto convertido"
+  },
+  "HISTORY": {
+    "TITLE": "Historial de consultas",
+    "CURRENCY_TYPE": "Tipo de moneda de cambio",
+    "USERNAME": "Nombre del usuario",
+    "DATE": "Fecha"
+  }
+}

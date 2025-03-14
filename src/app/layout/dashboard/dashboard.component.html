@@ -1,24 +1,32 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Viajes</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="#">{{ 'TITLE' | translate }}</a>
+
+    <div class="d-flex">
+      <select class="form-select me-2" [(ngModel)]="selectedLanguage" (change)="switchLanguage()">
+        <option value="es">🇪🇸 Español</option>
+        <option value="de">🇩🇪 Alemán</option>
+      </select>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
   </div>
 </nav>
 
 <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="sidebarMenu">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title">Menú</h5>
+    <h5 class="offcanvas-title">{{ 'MENU.HOME' | translate }}</h5>
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
   </div>
   <div class="offcanvas-body">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link text-white" routerLink="/history">Historial</a>
+        <a class="nav-link text-white" routerLink="/history">{{ 'MENU.HISTORY' | translate }}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" (click)="logout()">Cerrar sesión</a>
+        <a class="nav-link text-white" (click)="logout()">{{ 'MENU.LOGOUT' | translate }}</a>
       </li>
     </ul>
   </div>

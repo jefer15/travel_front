@@ -1,0 +1,33 @@
+{
+  "TITLE": "Reisen",
+  "NEXT": "Gefolgt",
+  "RETURN_TO_HOME": "Zurück nach Hause",
+  "MENU": {
+    "HOME": "Zuhause",
+    "HISTORY": "Verlauf",
+    "LOGOUT": "Abmelden"
+  },
+  "DESTINATION": {
+    "SELECT_DESTINATION": "Wählen Sie ein Ziel",
+    "COUNTRY": "Land",
+    "CITY": "Stadt"
+  },
+  "BUDGET": {
+    "ENTER_BUDGET": "Geben Sie Ihr Budget ein",
+    "BUDGET_COP": "Budget in COP"
+  },
+  "SUMMARY": {
+    "TRIP_SUMMARY": "Reiseübersicht",
+    "DESTINATION": "Reiseziel",
+    "BUDGET": "Budget in cop",
+    "WEATHER": "Aktuelles wetter",
+    "EXCHANGE_RATE": "Wechselkurs",
+    "CONVERTED_BUDGET": "Umgewandeltes budget"
+  },
+  "HISTORY": {
+    "TITLE": "Anfrageverlauf",
+    "CURRENCY_TYPE": "Währungstyp",
+    "USERNAME": "Benutzername",
+    "DATE": "Datum"
+  }
+}

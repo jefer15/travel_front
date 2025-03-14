@@ -1,26 +1,24 @@
 <div class="container d-flex justify-content-center align-items-center mt-4">
   <div class="w-100" style="max-width: 400px;">
-    <h2 class="text-center mb-3">Selecciona un destino</h2>
+    <h2 class="text-center mb-3">{{ 'DESTINATION.SELECT_DESTINATION' | translate }}</h2>
 
     <div class="bg-light shadow-sm rounded p-4">
       <div class="form-group mb-3">
-        <label for="country" class="fw-bold">País:</label>
+        <label for="country" class="fw-bold">{{ 'DESTINATION.COUNTRY' | translate }}:</label>
         <select class="form-control form-select" id="country" [(ngModel)]="selectedCountry" (change)="getCitiesByCountry()">
-          <option value="" disabled selected>Seleccione un país</option>
           <option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</option>
         </select>
       </div>
 
       <div class="form-group mb-3">
-        <label for="city" class="fw-bold">Ciudad:</label>
+        <label for="city" class="fw-bold">{{ 'DESTINATION.CITY' | translate }}:</label>
         <select class="form-control form-select" id="city" [(ngModel)]="selectedCity" [disabled]="!selectedCountry">
-          <option value="" disabled selected>Seleccione una ciudad</option>
           <option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</option>
         </select>
       </div>
 
       <button class="btn btn-primary w-100" [disabled]="!selectedCountry || !selectedCity" (click)="goToNextPage()">
-        Siguiente →
+        {{ 'NEXT' | translate }}
       </button>
     </div>
   </div>
