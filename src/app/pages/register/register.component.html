@@ -11,7 +11,7 @@
                 placeholder="Ingresa tu nombre" />
               <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
                 class="text-danger small mt-1">
-                El nombre debe tener al menos 3 caracteres
+                El nombre es requerido
               </div>
             </div>
 
@@ -22,6 +22,10 @@
               <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
                 class="text-danger small mt-1">
                 Email inválido
+              </div>
+              <div *ngIf="registerForm.get('email')?.hasError('required') && registerForm.get('email')?.touched"
+                class="text-danger small mt-1">
+                Email requerido
               </div>
             </div>
 
@@ -45,9 +49,13 @@
                   </svg>
                 </button>
               </div>
+              <div *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched"
+                class="text-danger small mt-1">
+                La contraseña es requerida.
+              </div>
               <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
                 class="text-danger small mt-1">
-                La contraseña debe tener al menos 6 caracteres
+                La contraseña debe contener al menos ocho caracteres, una letra mayúscula, una minúscula, un número y un símbolo especial.
               </div>
             </div>
 
@@ -71,9 +79,10 @@
                   </svg>
                 </button>
               </div>
-              <div *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched"
+              <div *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched
+              && registerForm.get('password')?.touched || registerForm.get('password')?.value != registerForm.get('confirmPassword')?.value"
                 class="text-danger small mt-1">
-                La contraseña debe coincidir
+                Las contraseñas no coinciden
               </div>
             </div>
 

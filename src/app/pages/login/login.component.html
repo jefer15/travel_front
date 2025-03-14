@@ -13,6 +13,10 @@
                 class="text-danger small mt-1">
                 Email inválido
               </div>
+              <div *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched"
+                class="text-danger small mt-1">
+                Email requerido
+              </div>
             </div>
 
             <div class="mb-3 position-relative">
